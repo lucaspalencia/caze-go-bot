@@ -1,1 +1,1 @@
-worker: bin/caze-go-bot
+worker: caze-go-bot
