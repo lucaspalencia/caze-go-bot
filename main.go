@@ -131,17 +131,8 @@ func main() {
 
 	go demux.HandleChan(stream.Messages)
 
-	fmt.Scanln()
+	select {}
+
 	stream.Stop()
 	fmt.Println("Stopping caze bot...")
-
-	// Wait for SIGINT and SIGTERM (HIT CTRL-C)
-	// ch := make(chan os.Signal)
-
-	// signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM)
-
-	// log.Println(<-ch)
-
-	// fmt.Println("Stopping Stream...")
-	// stream.Stop(
 }
