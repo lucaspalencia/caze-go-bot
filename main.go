@@ -85,10 +85,11 @@ func getTweetFunc(client *twitter.Client) func(tweet *twitter.Tweet) {
 			MediaIds:          []int64{media.MediaID},
 		}
 
-		reply, _, err := client.Statuses.Update("@"+tweet.User.ScreenName+"", statusParams)
+		reply, res, err := client.Statuses.Update("@"+tweet.User.ScreenName+" meteu essa mané ?", statusParams)
 
 		handleError(err, "Error replying tweet")
 
+		printLog("Tweet replied API response:", res)
 		printLog("Tweet replied:", reply)
 	}
 }
